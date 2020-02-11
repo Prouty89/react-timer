@@ -2,11 +2,25 @@ import React, { useState, useEffect } from 'react';
 import './App.scss';
 
 function App() {
+  const [seconds, setSeconds] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('seconds', seconds)
+  }, [seconds]);
+
+  console.log('count', count)
+
+
+  setSeconds(seconds + 1);
+
   return (
     <div className="app">
+      <button onClick={() => setSeconds(seconds + 1)}>Inc Seconds</button>
+      <button onClick={() => setCount(count + 1)}>Inc Count</button>
       <div className='time-circle'>
         <div className="time">
-          00:04
+          {seconds}
         </div>
       </div>
       <div className="buttons">
